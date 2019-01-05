@@ -89,25 +89,25 @@ if ($result) {
 		<div class="title-1">Фильмотека</div>
 
 		<?php if ($resultSuccess != '') { ?>
-			<div class="info-success"><?=$resultSuccess?></div>
+			<div class="notify notify--success mb-20"><?=$resultSuccess?></div>
 		<?php } ?>
 
 		<?php if ($resultError != '') { ?>
-			<div class="notify--error"><?=$resultError?></div>
+			<div class="notify notify--error mb-20"><?=$resultError?></div>
 		<?php } ?>
 
 
-
+		<?php
+		foreach ($films as $key => $film) {
+			
+		?>
 		<div class="card mb-20">
-			<h4 class="title-4">Такси 2</h4>
-			<div class="badge">комедия</div>
-			<div class="badge">2000</div>
+			<h4 class="title-4"><?=$film['title']?></h4>
+			<div class="badge"><?=$film['genre']?></div>
+			<div class="badge"><?=$film['year']?></div>
 		</div>
-		<div class="card mb-20">
-			<h4 class="title-4">Облачный атлас</h4>
-			<div class="badge">драма</div>
-			<div class="badge">2012</div>
-		</div>
+		<?php } ?>
+		
 		<div class="panel-holder mt-80 mb-40">
 			<div class="title-3 mt-0">Добавить фильм</div>
 			<form action="index.php" method="POST">
@@ -129,7 +129,7 @@ if ($result) {
 					<div class="col">
 						<div class="form-group"><label class="label">Год<input class="input" name="year" type="text" placeholder="2000" /></label></div>
 					</div>
-				</div><input class="button" type="submit" name="newFilm" value="Добавить" name="add-film" />
+				</div><input class="button" type="submit" value="Добавить" name="add-film" />
 			</form>
 		</div>
 	</div><!-- build:jsLibs js/libs.js -->
