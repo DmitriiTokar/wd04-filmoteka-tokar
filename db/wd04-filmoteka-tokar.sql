@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Янв 04 2019 г., 17:51
+-- Время создания: Янв 08 2019 г., 13:01
 -- Версия сервера: 5.6.41
--- Версия PHP: 5.5.38
+-- Версия PHP: 7.2.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- База данных: `filmoteka`
+-- База данных: `wd04-filmoteka-tokar`
 --
 
 -- --------------------------------------------------------
@@ -41,7 +41,9 @@ CREATE TABLE `films` (
 
 INSERT INTO `films` (`id`, `title`, `genre`, `year`) VALUES
 (1, 'Такси 2', 'комедия', 2000),
-(2, 'Облачный атлас', 'драма', 2012);
+(2, 'Облачный атлас', 'драма', 2012),
+(3, 'Такси 3', 'комедия', 2002),
+(4, 'Такси', 'комедия', 1998);
 
 --
 -- Индексы сохранённых таблиц
@@ -61,7 +63,7 @@ ALTER TABLE `films`
 -- AUTO_INCREMENT для таблицы `films`
 --
 ALTER TABLE `films`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
