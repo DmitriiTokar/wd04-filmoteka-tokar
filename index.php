@@ -16,35 +16,30 @@ $errors = array();
 if (array_key_exists('add-film', $_POST)) {
 
 	if ($_POST['title'] == '') {
-		$errors[] = ",<p>Необходимо ввести название фильма!</p>";
+		$errors[] = "<p>Необходимо ввести название фильма!</p>";
 	}
 
 	if ($_POST['genre'] == '') {
-		$errors[] = ",<p>Необходимо ввести жанр фильма!</p>";
+		$errors[] = "<p>Необходимо ввести жанр фильма!</p>";
 	}
 
 	if ($_POST['year'] == '') {
-		$errors[] = ",<p>Необходимо ввести год выпуска фильма!</p>";
+		$errors[] = "<p>Необходимо ввести год выпуска фильма!</p>";
 	}
 
-	if (empty($errors)) {
+	if ( empty($errors) ) {
+		// Запись данных в БД
 		$query = "INSERT INTO films (title, genre, year) VALUES (
-	'". mysqli_real_escape_string($link, $_POST['title']) ."',
+			'". mysqli_real_escape_string($link, $_POST['title']) ."', 
+			'". mysqli_real_escape_string($link, $_POST['genre']) ."', 
+			'". mysqli_real_escape_string($link, $_POST['year']) ."'
+			)";
 
-	'". mysqli_real_escape_string($link, $_POST['genre']) ."',
-
-	'". mysqli_real_escape_string($link, $_POST['year']) ."'
-	)";
-
-	}
-
-	
-
-	if (mysqli_query($link, $query)) {
-		$resultSuccess = "<p>Фильм успешно добавлен</p>";
-
-	} else {
-		$resultError = "<p>Что-то пошло не так.</p>";
+		if ( mysqli_query($link, $query) ) {
+			$resultSuccess = "<p>Фильм был успешно добавлен!</p>";
+		} else { 
+			$resultError = "<p>Что то пошло не так. Добавьте фильм еще раз!</p>";
+		}
 	}
 }
 
@@ -103,6 +98,7 @@ if ($result) {
 		?>
 		<div class="card mb-20">
 			<h4 class="title-4"><?=$film['title']?></h4>
+			<div class="button button--removesmall">Удалить</div>
 			<div class="badge"><?=$film['genre']?></div>
 			<div class="badge"><?=$film['year']?></div>
 		</div>
