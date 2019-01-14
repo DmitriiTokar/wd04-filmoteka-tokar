@@ -1150,6 +1150,12 @@ fieldset {
   background-image: -ms-linear-gradient(90deg, #3d7aa0 0%, #8abbda 100%);
   color: #fff;
 }
+
+.notify--deleted {
+  background-image: -webkit-linear-gradient(90deg, #EBAA52 0%, #F1D8B6 100%);
+  background-image: -ms-linear-gradient(90deg, #EBAA52 0%, #F1D8B6 100%);
+  color: #fff;
+}
 .notify--error {
   background-image: -webkit-linear-gradient(90deg, #971515 0%, #c93232 100%);
   background-image: -ms-linear-gradient(90deg, #971515 0%, #c93232 100%);
@@ -2545,6 +2551,10 @@ h3.main-page__aboutme {
   display: flex;
   justify-content: space-between;
   align-items: top;
+}
+
+.card__header>* {
+  margin-top: 0 !important;
 }
 
 
