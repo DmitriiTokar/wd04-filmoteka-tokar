@@ -1,19 +1,3 @@
-<?php if (@$resultSuccess != '') { ?>
-	<div class="notify notify--success mb-20">
-    <?=$resultSuccess?>
-	</div>
-<?php } ?>
-
-<?php if (@$resultInfo != '') { ?>
-	<div class="notify notify--deleted mb-20">
-    <?=$resultInfo?>
-	</div>
-<?php } ?>
-<?php if (@$resultError != '') { ?>
-	<div class="notify notify--error mb-20">
-    <?=$resultError?>
-	</div>
-<?php } ?>
 <div class="container user-content pt-35">
 
 	<div class="title-1">Добавить новый фильм</div>
@@ -39,7 +23,12 @@
 						<div class="col">
 							<div class="form-group"><label class="label">Год<input class="input" name="year" type="text" placeholder="2000" /></label></div>
 						</div>
-					</div><input class="button" type="submit" value="Добавить" name="add-film" />
+					</div>
+					<textarea class="textarea mb-20" name="description" placeholder="Введите описание фильма" ></textarea>	
+					<div class="mb-10">
+						<input type="file" name="photo" />
+					</div>
+					<input class="button" type="submit" value="Добавить" name="add-film" />
 				</form>
 	</div>
 </div>

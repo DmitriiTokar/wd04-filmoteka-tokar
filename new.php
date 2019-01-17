@@ -22,7 +22,7 @@ if (array_key_exists('add-film', $_POST)) {
 
 	if ( empty($errors) ) {
 
-		$result = film_new($link, $_POST['title'], $_POST['genre'], $_POST['year']);
+		$result = film_new($link, $_POST['title'], $_POST['genre'], $_POST['year'],$_POST['description'] );
 
 	}
 
@@ -37,6 +37,7 @@ if (array_key_exists('add-film', $_POST)) {
 }
 
 include('views/head.tpl');
+include('views/notifications.tpl');
 include('views/new-film.tpl');
 include('views/footer.tpl');
 

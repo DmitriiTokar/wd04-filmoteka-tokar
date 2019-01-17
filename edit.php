@@ -23,7 +23,7 @@ if ( array_key_exists('update-film', $_POST) ) {
 	// Если ошщибок нет - сохраняем фильм
 	if ( empty($errors) ) {
 
-		$result = film_update($link, $_POST['title'], $_POST['genre'], $_POST['year'], $_GET['id']);
+		$result = film_update($link, $_POST['title'], $_POST['genre'], $_POST['year'], $_POST['description'], $_GET['id']);
 
 		if ($result) {
 			$resultSuccess = "<p>Фильм обновлен успешно</p>";
@@ -33,9 +33,10 @@ if ( array_key_exists('update-film', $_POST) ) {
 	}
 }
 
-$film = get_film($link, $id);
+$film = get_film($link, $_GET['id']);
 
 include('views/head.tpl');
+include('views/notifications.tpl');
 include('views/edit.tpl');
 include('views/footer.tpl');
 
