@@ -1,4 +1,7 @@
-<form enctype="multipart/form-data" action="new.php" method="POST">
+<h1>Укажите ваши данные</h1>
+
+
+<form action="request.php" method="POST">
 
 					<?php
 
