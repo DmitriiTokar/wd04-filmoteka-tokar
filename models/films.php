@@ -112,7 +112,7 @@ function film_update($link, $title, $genre, $year, $id, $description){
 			$errors[] = 'Your image file was larger than 10mb';
 		} else if (!preg_match("/\.(gif|jpg|png|jpeg)$/i", $fileName) ) {
 			$errors[] = 'Your image file was not jpg, jpeg, gif or png type';
-		} else if ($fileErrorMsg == 1) {
+		} else if ($fileErrorMessage == 1) {
 			$errors[] = 'An unknown error occurred';
 		}
 

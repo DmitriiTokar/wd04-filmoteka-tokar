@@ -23,5 +23,6 @@
 			<div class="admin-nav">
 				<a href="index.php" class="admin-nav__link">Все фильмы</a>
 				<a href="new.php" class="admin-nav__link">Добавить новый фильм</a>
+				<a href="request.php" class="admin-nav__link">Указать информацию</a>
 			</div>
 		</div>

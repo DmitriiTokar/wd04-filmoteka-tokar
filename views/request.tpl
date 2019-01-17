@@ -1,10 +1,4 @@
-<div class="container user-content pt-35">
-
-	<div class="title-1">Добавить новый фильм</div>
-
-	<div class="panel-holder mt-80 mb-40">
-				<div class="title-3 mt-0">Добавить фильм</div>
-				<form enctype="multipart/form-data" action="new.php" method="POST">
+<form enctype="multipart/form-data" action="new.php" method="POST">
 
 					<?php
 
@@ -29,6 +23,4 @@
 						<input type="file" name="photo" />
 					</div>
 					<input class="button" type="submit" value="Добавить" name="add-film" />
-				</form>
-	</div>
-</div>
+</form>
