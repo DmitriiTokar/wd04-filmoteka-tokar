@@ -1,29 +1,21 @@
 <h1>Укажите ваши данные</h1>
 
 
-<form action="request.php" method="POST">
+<form action="set-cookie.php" method="POST">
 
-					<?php
+	<div>
+		<label class="label">Ваше имя</label>
+		<input class="input mt-10" type="text" placeholder="Ваше имя" name="user-name" />
+	</div>			
+	<div class="mt-20">
+		<label class="label">Ваш город</label>
+		<input class="input" type="text" placeholder="Ваш город" name="user-city" />
+	</div>			
+		
+		<input class="button mt-20" type="submit" value="Сохранить" name="user-submit" />
+</form>
 
-					if (!empty($errors)) {
-						foreach ($errors as $key => $value) {
-						echo "<div class='notify notify--error mb-20'>$value</div>";
-						}
-					}
-
-					?>
-					<div class="form-group"><label class="label">Название фильма<input class="input" name="title" type="text" placeholder="Такси 2" /></label></div>
-					<div class="row">
-						<div class="col">
-							<div class="form-group"><label class="label">Жанр<input class="input" name="genre" type="text" placeholder="комедия" /></label></div>
-						</div>
-						<div class="col">
-							<div class="form-group"><label class="label">Год<input class="input" name="year" type="text" placeholder="2000" /></label></div>
-						</div>
-					</div>
-					<textarea class="textarea mb-20" name="description" placeholder="Введите описание фильма" ></textarea>	
-					<div class="mb-10">
-						<input type="file" name="photo" />
-					</div>
-					<input class="button" type="submit" value="Добавить" name="add-film" />
+<form action="unset-cookie.php" method="POST">			
+		
+		<input class="button mt-20" type="submit" value="Удалить данные" name="user-unset" />
 </form>

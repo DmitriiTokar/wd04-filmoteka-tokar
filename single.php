@@ -5,6 +5,8 @@ require('database.php');
 $link = db_connect();
 
 require('models/films.php');
+require('functions/login-functions.php');
+
 if ( @$_GET['action'] == 'delete') {
 	$result = delete_film($link, $_GET['id']);
 
@@ -31,8 +33,6 @@ include('views/footer.tpl');
 // Saving form data to db
 
 $errors = array();
-
-
 
 ?>
 

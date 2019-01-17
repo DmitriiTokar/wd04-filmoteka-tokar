@@ -80,7 +80,7 @@ function film_new($link, $title, $genre, $year, $description) {
 	return true;		
 }
 
-function get_film($link,$id) {
+function get_film($link, $id) {
 	$query = "SELECT * FROM films WHERE id = ' " . mysqli_real_escape_string($link, $id) . "' LIMIT 1";
 	$result = mysqli_query($link, $query);
 	if ( $result = mysqli_query($link, $query) ) {
@@ -90,7 +90,9 @@ function get_film($link,$id) {
 	return $film;
 }
 
-function film_update($link, $title, $genre, $year, $id, $description){
+function film_update($link, $title, $genre, $year, $description, $id){
+
+	$db_file_name = "";
 
 	if (isset($_FILES['photo']['name']) && $_FILES['photo']['tmp_name'] !== "") {
 		$fileName = $_FILES['photo']['name'];

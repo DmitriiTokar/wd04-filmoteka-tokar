@@ -2,7 +2,7 @@
 
 	<div class="title-1">Редатировать фильм</div>
 	<div class="panel-holder mt-80 mb-40">
-				<form ecntype="multipart/form-data" form action="edit.php?id=<?=$film['id']?>" method="POST">
+				<form action="edit.php?id=<?=$film['id']?>" method="POST">
 
 					<?php
 
