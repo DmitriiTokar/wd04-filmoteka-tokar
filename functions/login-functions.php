@@ -1,27 +1,20 @@
 <?php
 
-
-function isAdmin(){
+function isAdmin()
+{
 
 	if (isset($_SESSION['user'])) {
-	    if ($_SESSION['user'] == 'admin') {
-	        $result = true;               
-	    } else {
-	    	$result = false; 
-	    }
+		if ($_SESSION['user'] == 'admin') {
+			$result = true;
+		} else {
+			$result = false;
+		}
 
 	} else {
 
-		$result = false; 
+		$result = false;
 	}
 
-	return $result;  
+	return $result;
 }
-
-
 ?>
-
-
-
-
-
