@@ -25,16 +25,13 @@ if (array_key_exists('add-film', $_POST)) {
 
 		$result = film_new($link, $_POST['title'], $_POST['genre'], $_POST['year'],$_POST['description'] );
 
+
+		if ($result) {
+			$resultSuccess = "<p>Фильм добавлен успешно</p>";
+		} else {
+			$resultError = "<p>Что-то пошло не так. Доавьте фильм еще раз</p>";
+		}
 	}
-
-
-	if ($result) {
-		$resultSuccess = "<p>Фильм добавлен успешно</p>";
-	} else {
-		$resultError = "<p>Что-то пошло не так. Доавьте фильм еще раз</p>";
-	}
-
-
 }
 
 include('views/head.tpl');
